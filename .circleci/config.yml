@@ -1,0 +1,12 @@
+ build:
+    docker:
+      - image: node:19.5.0
+  
+    steps:
+      - checkout:
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm test --coverage
