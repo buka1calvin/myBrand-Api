@@ -1,4 +1,5 @@
- build:
+ jobs:
+  build:
     docker:
       - image: node:19.5.0
   
