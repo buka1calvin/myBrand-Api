@@ -4,8 +4,8 @@ import app from "../index.js";
 import killPort from "kill-port";
 import mongoose from "mongoose";
 import path from "path"
-jest.setTimeout(200000);
 import Post from "../models/Post.js";
+jest.setTimeout(200000);
 describe("This is the server and tests container",()=>{
     beforeAll(async()=>{
         await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority")
