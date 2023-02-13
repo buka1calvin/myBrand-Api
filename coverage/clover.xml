@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676325580582" clover="3.2.0">
-  <project timestamp="1676325580583" name="All files">
-    <metrics statements="184" coveredstatements="122" conditionals="34" coveredconditionals="16" methods="22" coveredmethods="15" elements="240" coveredelements="153" complexity="0" loc="184" ncloc="184" packages="7" files="17" classes="17"/>
+<coverage generated="1676326570320" clover="3.2.0">
+  <project timestamp="1676326570321" name="All files">
+    <metrics statements="184" coveredstatements="115" conditionals="34" coveredconditionals="16" methods="22" coveredmethods="13" elements="240" coveredelements="144" complexity="0" loc="184" ncloc="184" packages="7" files="17" classes="17"/>
     <package name="myBrand-Api">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.js" path="C:\Users\BUKA\Desktop\ATLP Projects\myBrand-Api\index.js">
@@ -19,7 +19,7 @@
       </file>
     </package>
     <package name="myBrand-Api.controllers">
-      <metrics statements="91" coveredstatements="54" conditionals="18" coveredconditionals="8" methods="14" coveredmethods="10"/>
+      <metrics statements="91" coveredstatements="47" conditionals="18" coveredconditionals="8" methods="14" coveredmethods="8"/>
       <file name="adminSignUp.js" path="C:\Users\BUKA\Desktop\ATLP Projects\myBrand-Api\controllers\adminSignUp.js">
         <metrics statements="17" coveredstatements="8" conditionals="8" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
@@ -79,21 +79,21 @@
         <line num="87" count="0" type="stmt"/>
       </file>
       <file name="commentCont.js" path="C:\Users\BUKA\Desktop\ATLP Projects\myBrand-Api\controllers\commentCont.js">
-        <metrics statements="15" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="15" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="83" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
       </file>
       <file name="contactContoller.js" path="C:\Users\BUKA\Desktop\ATLP Projects\myBrand-Api\controllers\contactContoller.js">

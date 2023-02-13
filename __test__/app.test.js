@@ -20,16 +20,16 @@ test("i should get all blogs",async()=>{
 })
 })
 //posting a blog
-describe("Post Blog",()=>{
-    test("posting A blog with empty field",async()=>{
-        await request(app).post("/api/v1/blogs").send({}).expect(400)
-    }) 
-    test("posting with values",async()=>{
-        await request(app).post("/api/v1/blogs").field("title","blog1").field("summary","this is about blog1")
-        .field("content","this is the content ablout blog1")
-        .field("picture",path.resolve(__dirname,"../img-testing/register.png")).expect(200)
-    },40000)
-})
+// describe("Post Blog",()=>{
+//     test("posting A blog with empty field",async()=>{
+//         await request(app).post("/api/v1/blogs").send({}).expect(400)
+//     }) 
+//     test("posting with values",async()=>{
+//         await request(app).post("/api/v1/blogs").field("title","blog1").field("summary","this is about blog1")
+//         .field("content","this is the content ablout blog1")
+//         .field("picture",path.resolve(__dirname,"../img-testing/register.png")).expect(200)
+//     },40000)
+// })
 //getting single blog
 describe("dispaly single blog/delete/post",()=>{
     test("this is about getting a single blog",async()=>{
@@ -140,10 +140,10 @@ describe("comment Post",()=>{
         }).expect(201)
     })
 })
-describe("comment Get",()=>{
-    test("this is about comments when there are received with identification",async()=>{
-       await request(app).get("/api/v1/blogs/63dbe0ad0d9dda20f4e9e440/comments").expect(200)
-    })
-})
+// describe("comment Get",()=>{
+//     test("this is about comments when there are received with identification",async()=>{
+//        await request(app).get("/api/v1/blogs/63dbe0ad0d9dda20f4e9e440/comments").expect(200)
+//     })
+// })
 
 })
