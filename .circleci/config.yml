@@ -1,13 +1,34 @@
- jobs:
+#  jobs:
+#   build:
+#     docker:
+#       - image: node:19.5.0
+  
+#     steps:
+#       - checkout:
+#       - run:
+#           name: Install dependencies
+#           command: npm install
+#       - run:
+#           name: Run tests
+#           command: npm test --coverage
+# version: 2.1
+
+jobs:
   build:
     docker:
       - image: node:19.5.0
-  
+    environment:
+      COVERALLS_REPO_TOKEN: uWkzY3Rd3kCoamXygd1mGcQdvFivWx5T6
+    working_directory: ~/ATLP Projects
     steps:
       - checkout:
+          path: ~/ATLP Projects
       - run:
           name: Install dependencies
           command: npm install
       - run:
           name: Run tests
-          command: npm test --coverage
+          command: npm test --coverage -- --verbose
+      - run:
+          name: Upload coverage to Coveralls
+          command: npx coveralls < coverage/lcov.info 
