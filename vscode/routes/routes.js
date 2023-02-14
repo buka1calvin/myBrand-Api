@@ -15,7 +15,7 @@ router.get("/blogs",getAllBlogs)
 //these are routes for the contact area
 router.get("/contacts",getAllContacts)
 export default router
-router.post("/blogs",isAdmin,isAuth(passport),upload.single("picture"),createBlogs)
+router.post("/blogs",upload.single("picture"),createBlogs)
 //this is for getting an obj.id and catching the error
 router.get("/blogs/:id",getSingleBlog)
 router.patch("/blogs/:id",isAuth(passport),isAdmin,upload.single("picture"),updateSingleBlog)
