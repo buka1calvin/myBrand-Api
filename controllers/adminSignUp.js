@@ -15,9 +15,9 @@ const adminSignUp=async(req,res)=>{
             return res.status(200).json("you already have an account!")
         }
         else{
-            if(loginmail){
-                return res.status(200).json("the Email is already taken!")
-            }
+            // if(loginmail){
+            //     return res.status(200).json("the Email is already taken!")
+            // }
         try{
             const salt=await genSalt(10)
             const hashedPwd=await hash(req.body.password,salt)
