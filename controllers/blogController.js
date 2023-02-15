@@ -62,7 +62,7 @@ const updateSingleBlog=async(req, res)=>{
             return res.status(200).send({post}) 
         }
     } catch {
-        res.status(404)
+        res.status(500)
         res.send({ error: "Post doesn't exist!" })
     }
 }
