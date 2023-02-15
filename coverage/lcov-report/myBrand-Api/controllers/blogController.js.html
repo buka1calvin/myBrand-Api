@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.71% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/35</span>
+                <span class='fraction'>20/35</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.71% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/35</span>
+                <span class='fraction'>20/35</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -161,9 +161,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,9 +177,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -188,7 +188,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -249,12 +249,12 @@ const getAllBlogs=async(req,res)=&gt;{
     const blogs=await Post.find()
     return res.status(200).json(blogs)  
 }
-const createBlogs=<span class="fstat-no" title="function not covered" >as</span>ync(req,res)=&gt;{
-    const {error,values}=<span class="cstat-no" title="statement not covered" >blogschema.validate(req.body)</span>
-<span class="cstat-no" title="statement not covered" >     if(error){</span>
-<span class="cstat-no" title="statement not covered" >         return res.status(400).send({message:"no input"})</span>
+const createBlogs=async(req,res)=&gt;{
+    const {error,values}=blogschema.validate(req.body)
+     if(error){
+         return res.status(400).send({message:"no input"})
     }
-    else{
+    else<span class="missing-if-branch" title="else path not taken" >E</span>{
         const post=<span class="cstat-no" title="statement not covered" >new Post({</span>
             title:req.body.title,
             summary:req.body.summary,
@@ -277,7 +277,7 @@ const getSingleBlog=async(req,res)=&gt;{
         res.status(200).send(post)
      }
      catch(error){
-<span class="cstat-no" title="statement not covered" >        res.status(500).json({message:error.details})</span>
+        res.status(500).json({message:error.details})
     }
 }
 const updateSingleBlog=<span class="fstat-no" title="function not covered" >as</span>ync(req, res)=&gt;{
@@ -337,7 +337,7 @@ export {getAllBlogs,createBlogs,getSingleBlog,updateSingleBlog,blogDelete,postLi
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-13T17:38:53.601Z
+                at 2023-02-14T09:32:47.745Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

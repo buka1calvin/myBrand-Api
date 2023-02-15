@@ -16,11 +16,11 @@ const createAccount= async(req,res)=>{
         const loginEmail= await signUp.findOne({email:req.body.email})
         const loginUserName=await signUp.findOne({username:req.body.usersname})
         if(loginEmail&&loginUserName){
-            return res.status(200).json("you already have an account!")
+            return res.status(401).json("you already have an account!")
         }
         else{
             if(loginEmail){
-                return res.status(200).json("the Email is already taken!")
+                return res.status(409).json("the Email is already taken!")
             }
         try{
             const salt=await genSalt(10)

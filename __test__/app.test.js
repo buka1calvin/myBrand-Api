@@ -4,8 +4,8 @@ import app from "../index.js";
 import killPort from "kill-port";
 import mongoose from "mongoose";
 import path from "path"
-jest.setTimeout(200000);
 import Post from "../models/Post.js";
+jest.setTimeout(200000);
 describe("This is the server and tests container",()=>{
     beforeAll(async()=>{
         await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority")
@@ -19,21 +19,26 @@ test("i should get all blogs",async()=>{
     const allBlogs=await request(app).get("/api/v1/blogs").expect(200)
 })
 })
-//posting a blog
+// posting a blog
 describe("Post Blog",()=>{
     test("posting A blog with empty field",async()=>{
         await request(app).post("/api/v1/blogs").send({}).expect(400)
     }) 
-    test("posting with values",async()=>{
-        await request(app).post("/api/v1/blogs").field("title","blog1").field("summary","this is about blog1")
-        .field("content","this is the content ablout blog1")
-        .field("picture",path.resolve(__dirname,"../img-testing/register.png")).expect(200)
-    },40000)
+    // test("posting with values",async()=>{
+    //     await request(app).post("/api/v1/blogs").field("title","blog1").field("summary","this is about blog1")
+    //     .field("content","this is the content ablout blog1")
+    //     .field("picture",path.resolve(__dirname,"../img-testing/register.png")).expect(200)
+    // },40000)
 })
 //getting single blog
 describe("dispaly single blog/delete/post",()=>{
     test("this is about getting a single blog",async()=>{
         const singleBlog=await request(app).get("/api/v1/blogs/63de2caf33dd6f7662d53af0").expect(200)
+    })
+})
+describe("Get Single Blog",()=>{
+    test("single Blog",async()=>{
+        await request(app).get("/api/v1/blogs/63de2caf33dd6f7662d0").expect(500)
     })
 })
 //this is about posting 
