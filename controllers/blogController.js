@@ -41,20 +41,6 @@ const updateSingleBlog=async(req, res)=>{
     try {
         const {id:newId}=req.params
         const post = await Post.findOneAndUpdate({ _id:newId},req.body,{new:true})
-        
-        // if (req.body.title) {
-        //     post.title = req.body.title
-        // }
-
-        // if (req.body.summary) {
-        //     post.summary = req.body.summary
-        // }
-        // if (req.file.path) {
-        //     post.picture = req.file.path
-        // }
-        // if (req.body.content) {
-        //     post.content = req.body.content
-        // }
         if(!post){
             return res.status(404).json( { msg: `No Blog with id : ${newId}` } )        
         }
@@ -71,7 +57,7 @@ const blogDelete=async(req,res)=>{
     await Post.deleteOne({
         _id:req.params.id,
     })
-    res.send("DELETED SUCCESSFULLY!")
+    res.status(200).send("DELETED SUCCESSFULLY!")
 }
 catch{
     res.status(404).json({error:"post doesn't exist!"})
