@@ -52,7 +52,7 @@ router.get("/blogs",getAllBlogs)
  * "/api/v1/blogs":
  *  post:
  *     tags:
- *     - blogs
+ *     - blog-post
  *     summary: Create a Blog
  *     security:
  *       - bearerAuth: []
@@ -90,7 +90,7 @@ router.get("/blogs",getAllBlogs)
 router.post("/blogs",isAuth(passport),upload.single("picture"),createBlogs)
 /**
  * @swagger
- * /api/v1/blogs/:id:
+ * /api/v1/blogs/{id}:
  *   get:
  *     tags:
  *       - blogs
@@ -133,7 +133,7 @@ router.get("/blogs/:id",getSingleBlog)
 
 /**
  * @swagger
- * /api/v1/blogs/:id:
+ * /api/v1/blogs/{id}:
  *   patch:
  *     tags:
  *       - blogs
@@ -189,7 +189,7 @@ router.get("/blogs/:id",getSingleBlog)
 router.patch("/blogs/:id",isAuth(passport),upload.single("picture"),updateSingleBlog)
 /**
  * @swagger
- * '/api/v1/blogs/:id':
+ * '/api/v1/blogs/{id}':
  *  delete:
  *     tags:
  *     - blogs
@@ -279,7 +279,7 @@ router.get("/contacts",getAllContacts)
 router.post("/contacts",createMessage);
 /**
  * @swagger
- * /api/v1/blogs/:Cid:
+ * /api/v1/blogs/{Cid}:
  *   get:
  *     tags:
  *       - contacts
@@ -555,7 +555,7 @@ router.get("/blogs/:id/comments",getComments)
 //this is for the likes
 /**
  * @swagger
- * /api/v1/blogs/:id/likes:
+ * /api/v1/blogs/{id}/likes:
  *   post:
  *     tags:
  *       - blogs
