@@ -1,5 +1,6 @@
 import express from "express"
 import { set, connect } from "mongoose"
+import cors from "cors"
 import router from "./vscode/routes/routes.js"
 import cookieParser from "cookie-parser"
 import passport from "passport";
@@ -9,6 +10,7 @@ import swaggerDocs from './swagger.js'
 dotenv.config()
 set('strictQuery', true)
 const app = express()
+app.use(cors({origin:"*",methods:["GET","POST","DELETE","UPDATE","PUT","PATCH"]}))
 const port=5000
 connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true })
 	.then(() => {
