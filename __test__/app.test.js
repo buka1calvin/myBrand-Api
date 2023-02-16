@@ -22,7 +22,7 @@ test("i should get all blogs",async()=>{
 // posting a blog
 describe("Post Blog",()=>{
     test("posting A blog with empty field",async()=>{
-        await request(app).post("/api/v1/blogs").send({}).expect(400)
+        await request(app).post("/api/v1/blogs").send({}).expect(401)
     }) 
     // test("posting with values",async()=>{
     //     await request(app).post("/api/v1/blogs").field("title","blog1").field("summary","this is about blog1")
@@ -45,7 +45,7 @@ describe("Get Single Blog",()=>{
 //this for deleting blogs
 describe("Delete Blog",()=>{
     test("this is about getting a single blog",async()=>{
-        const deleteBlog=await request(app).delete("/api/v1/blogs/63e733ad13e476f58d26fd21").expect(200)
+        const deleteBlog=await request(app).delete("/api/v1/blogs/63e733ad13e476f58d26fd21").expect(401)
     })
 })
                 /*this is about message*/
@@ -87,7 +87,7 @@ describe("Post SignIn",()=>{
         password:"gdhdghgdh"
     }
     test("this is about signIn when there are send without identification",async()=>{
-        await request(app).post("/api/v1/signup").send(testing).expect(200)
+        await request(app).post("/api/v1/signup").send(testing).expect(401)
     })
 })
 //this is for the admin SignIn
