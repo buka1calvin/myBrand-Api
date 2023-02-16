@@ -19,6 +19,9 @@ const options = {
       servers:[
         {
          url:'http://localhost:5000/'   
+        },
+        {
+          url:'https://buka-dev.onrender.com/'
         }
       ]
   },
