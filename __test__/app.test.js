@@ -8,7 +8,7 @@ import Post from "../models/Post.js";
 jest.setTimeout(200000);
 describe("This is the server and tests container",()=>{
     beforeAll(async()=>{
-        await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority")
+        await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/test?retryWrites=true&w=majority")
     })
     afterAll(async()=>{
         await mongoose.disconnect()

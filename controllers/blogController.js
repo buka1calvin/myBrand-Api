@@ -1,5 +1,5 @@
-
 import Post from "../models/Post.js"
+import path from "path"
 import { blogschema} from "../vscode/validations/validate.js"
 //this is for getting the whole 
 const getAllBlogs=async(req,res)=>{
