@@ -6,7 +6,7 @@ import { getAllBlogs, createBlogs, getSingleBlog, updateSingleBlog, blogDelete,p
 import { getAllContacts, createMessage, getSingleMessage, deleteMessage } from "../../controllers/contactContoller.js"
 import { createAccount, accessAccount,getUsers} from "./auth.js"
 import passport from "passport"
-import {createComment,getComments} from "../../controllers/commentCont.js"
+import {createComment,getComments,getAllComments,delComment} from "../../controllers/commentCont.js"
 import isAuth from "./middlewares/authentication.js"
 import isAdmin from "./middlewares/adminValidate.js"
 import adminSignUp from "../../controllers/adminSignUp.js"
@@ -186,7 +186,7 @@ router.get("/blogs/:id",getSingleBlog)
  *       404:
  *         description: Not Found
  */
-router.patch("/blogs/:id",isAuth(passport),upload.single("picture"),updateSingleBlog)
+router.patch("/blogs/:id",isAuth(passport),updateSingleBlog)
 /**
  * @swagger
  * '/api/v1/blogs/{id}':
@@ -314,7 +314,7 @@ router.post("/contacts",createMessage);
  *       404:
  *         description: Not Found
  */
-router.get("/contacts/:Cid",getSingleMessage);
+router.get("/contacts/:id",getSingleMessage);
 /**
  * @swagger
  * '/api/v1/contacts/:id':
@@ -333,7 +333,7 @@ router.get("/contacts/:Cid",getSingleMessage);
  *      404:
  *        description: Not Found
  */
-router.delete("/contacts/:Cid",deleteMessage);
+router.delete("/contacts/:id",deleteMessage);
 //these are routes for signIn and logIn
 /**
  * @swagger
@@ -552,6 +552,8 @@ router.post("/blogs/:id/comments",createComment)
  *                 $ref: '#/components/schemas/Comment'
  */
 router.get("/blogs/:id/comments",getComments)
+router.get("/comments",getAllComments)
+router.delete("/comments/:id",delComment)
 //this is for the likes
 /**
  * @swagger

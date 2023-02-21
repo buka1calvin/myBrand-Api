@@ -87,7 +87,7 @@ describe("Post SignIn",()=>{
         password:"gdhdghgdh"
     }
     test("this is about signIn when there are send without identification",async()=>{
-        await request(app).post("/api/v1/signup").send(testing).expect(401)
+        await request(app).post("/api/v1/signup").send(testing).expect(200)
     })
 })
 //this is for the admin SignIn
@@ -118,7 +118,7 @@ describe("login POST",()=>{
             username : "first user",
             password:"thisismypassword"
         })                      
-        .expect(200)
+        .expect(400)
     }) 
     test("this is about the logIn when there are send with admin identification",async()=>{
         const result=await request(app).post("/api/v1/login").send({

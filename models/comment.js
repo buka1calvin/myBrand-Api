@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose"
 const commentSchema=Schema({
-    name: String,
+    email: String,
     message: String,
     blogId: String,
 }

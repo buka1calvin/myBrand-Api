@@ -22,8 +22,7 @@ connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?re
 			 console.log("Server has started!")
 			 swaggerDocs(app, port)
 		}
-		)
-		
+		)	
 	})
 	export default app
 	

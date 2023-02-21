@@ -40,8 +40,9 @@ const deleteMessage=async(req,res)=>{
     try{
         
     await Contact.deleteOne({
-        _id:req.params.id
+        id:req.params.id
     })
+
     res.send("deleted successfully!")
 }
 catch{
