@@ -69,7 +69,6 @@ const postLikes=async(req,res)=>{
         { $inc: { likes: 1 } },
         { upsert: true, new: true }
       );
-      
       res.json({ likes: like.likes });  
 }
 export {getAllBlogs,createBlogs,getSingleBlog,updateSingleBlog,blogDelete,postLikes}

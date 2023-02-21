@@ -12,7 +12,7 @@ set('strictQuery', true)
 const app = express()
 app.use(cors({origin:"*",methods:["GET","POST","DELETE","UPDATE","PUT","PATCH"]}))
 const port=5000
-connect(process.env.mongo_db_url, { useNewUrlParser: true })
+connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true })
 	.then(() => {
 		app.use(express.json())
 		passport.use(jwtStrategy);

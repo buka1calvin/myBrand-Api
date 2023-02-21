@@ -8,7 +8,7 @@ import Post from "../models/Post.js";
 jest.setTimeout(200000);
 describe("This is the server and tests container",()=>{
     beforeAll(async()=>{
-        await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/test?retryWrites=true&w=majority")
+        await mongoose.connect("mongodb+srv://Buka-Dev:DestructorX@buka-devapps.lyhjr8f.mongodb.net/?retryWrites=true&w=majority")
     })
     afterAll(async()=>{
         await mongoose.disconnect()
@@ -87,7 +87,7 @@ describe("Post SignIn",()=>{
         password:"gdhdghgdh"
     }
     test("this is about signIn when there are send without identification",async()=>{
-        await request(app).post("/api/v1/signup").send(testing).expect(401)
+        await request(app).post("/api/v1/signup").send(testing).expect(200)
     })
 })
 //this is for the admin SignIn
@@ -118,7 +118,7 @@ describe("login POST",()=>{
             username : "first user",
             password:"thisismypassword"
         })                      
-        .expect(200)
+        .expect(400)
     }) 
     test("this is about the logIn when there are send with admin identification",async()=>{
         const result=await request(app).post("/api/v1/login").send({

@@ -186,7 +186,7 @@ router.get("/blogs/:id",getSingleBlog)
  *       404:
  *         description: Not Found
  */
-router.patch("/blogs/:id",isAuth(passport),upload.single("picture"),updateSingleBlog)
+router.patch("/blogs/:id",isAuth(passport),updateSingleBlog)
 /**
  * @swagger
  * '/api/v1/blogs/{id}':
